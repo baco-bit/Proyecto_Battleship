@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.tablero {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  background-color: lightskyblue;
+}
+
+.container h1{
+  text-align: center;
+}
+
+.celda{
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+}
+
+.tableroJuego {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.tableroJugador, .tableroPC {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  margin: 5%;
+  max-width: 550px;
+  min-width: 540px;
+  background-color: whitesmoke;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgb(106, 169, 207);
+}
+
+
+.tableroJugador .celda{
+  background-color: rgb(119, 161, 173);
+}
+.tableroJugador .celda:hover{
+  background-color: rgb(81, 100, 119);
+  cursor: pointer;
+}
+
+.tableroPc .celda {
+  background-color: lightcoral;
+}
+
+.tableroPc .celda:hover {
+  background-color: rgb(207, 97, 97);
+  cursor: pointer;
+}
+
+
+.titulo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 3px;
+}
+
+.instrucciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(84, 126, 153);
+}
+
+.instrucciones h4{
+  padding: 0 10px;
+}
+
+.tableroJugador .golpeJugador {
+  background-color: rgb(13, 54, 189);
+}
+
+.tableroPc .golpePc {
+  background-color: rgb(192, 59, 59);
+}
+
+.tableroJugador .fallo, .tableroPc .fallo {
+  background-color: rgb(51, 68, 82);
+  color: white;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: none;
+}
+
+.turn {
+  border: 1px solid lightskyblue;
+  background-color: lightskyblue;
+  margin-bottom: 5px;
+  color: rgb(51, 68, 82);
+}
+
+.fallo {
+  background-color: brown;
+  color: white;
+}
