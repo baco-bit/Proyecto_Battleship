@@ -4,7 +4,7 @@ import Celdas from './Celdas'
 
 const Tablero = (props) => {
 
-    const tableroJugador = props.EsquemaTablero.map((array, indexFila) => {
+    const Tablero = props.esquemaTableroParticipante.map((array, indexFila) => {
         return array.map((celda, indexCelda) => {
             return <Celdas 
             key={indexFila.toString() + indexCelda.toString()} 
@@ -18,7 +18,7 @@ const Tablero = (props) => {
         })
     })
 
-    const tableroPC = props.esquemaTableroPc.map((array, indexFila) => {
+    const tableroPC = props.esquemaTableroPC.map((array, indexFila) => {
         return array.map((celda, indexCelda) => {
             return <Celdas key={indexFila.toString() + indexCelda.toString()} 
             index={(indexFila.toString()) + (indexCelda.toString())} 
@@ -37,7 +37,8 @@ const Tablero = (props) => {
                 <div className={props.jugadorActivo === true ? "title turn" : "title"}>
                     <h3>Tablero Jugador</h3>
                 </div>
-            {tableroJugador}
+            
+            {Tablero}
             </div>
             <div className={props.jugadorActivo === false ? "tableroPC" : "tableroPC disabled"}>
                 <div className={props.jugadorActivo === false ? "titulo turn" : "titulo"}>

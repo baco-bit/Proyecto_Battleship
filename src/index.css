@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
+  background-color: rgba(86, 0, 167, 0.76);
 }
 
 code {
@@ -16,59 +17,57 @@ code {
 .tablero {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  width: 100%;
-  background-color: lightskyblue;
+  background-color: blueviolet;
 }
 
 .container h1{
   text-align: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgb(197, 211, 0);
 }
 
 .celda{
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
   margin: 1px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 20px;
+  height: 20px;
   color: azure;
 }
 
 .tableroJuego {
-  width: 100vw;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   
 }
 
-.tableroJugador, .tableroPC {
+.Tablero, .tableroPC {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 45%;
+  width: 430px;
+  height: 350px;
   margin: 5%;
-  max-width: 550px;
-  min-width: 540px;
   background-color: whitesmoke;
   padding: 5px;
-  box-shadow: 5px 5px 5px rgb(106, 169, 207);
+  box-shadow: 5px 5px 5px rgb(197, 211, 0);
 }
 
 
-.tableroJugador .celda{
+.Tablero .celda{
   background-color: rgb(119, 161, 173);
+  border: 1px solid black;
 }
-.tableroJugador .celda:hover{
+.Tablero .celda:hover{
   background-color: rgb(81, 100, 119);
   cursor: pointer;
+  border: 1px solid black;
 }
 
 .tableroPc .celda {
   background-color: lightcoral;
+  border: 1px solid black;
 }
 
 .tableroPc .celda:hover {
@@ -78,24 +77,23 @@ code {
 
 
 .titulo {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin: 0 3px;
+  border: 1px solid black;
+
 }
 
 .instrucciones {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(84, 126, 153);
+  background-color: rgb(197, 211, 0);
 }
 
 .instrucciones h4{
   padding: 0 10px;
+  
 }
 
-.tableroJugador .golpeJugador {
+.Tablero .golpeJugador {
   background-color: rgb(13, 54, 189);
 }
 
@@ -103,7 +101,7 @@ code {
   background-color: rgb(192, 59, 59);
 }
 
-.tableroJugador .fallo, .tableroPc .fallo {
+.Tablero .missed, .tableroPc .missed {
   background-color: rgb(51, 68, 82);
   color: white;
 }
@@ -114,13 +112,10 @@ code {
 }
 
 .turn {
-  border: 1px solid lightskyblue;
-  background-color: lightskyblue;
-  margin-bottom: 5px;
-  color: rgb(51, 68, 82);
+  border: 1px solid black;
 }
 
-.fallo {
+.missed {
   background-color: brown;
   color: white;
 }

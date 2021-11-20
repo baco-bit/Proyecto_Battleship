@@ -3,7 +3,7 @@ import Tablero from "./Tablero";
 
 const Juego = () => {
 
-  let esquemaTableroJugador = [
+  let esquemaTableroJugador1 = [
     [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -31,7 +31,7 @@ const Juego = () => {
 
   // randomizar en cada juego?
 
-  const [esquemaTableroParticipante, setEsquemaTableroParticipante] = useState(esquemaTableroJugador);
+  const [esquemaTableroParticipante, setEsquemaTableroParticipante] = useState(esquemaTableroJugador1);
   const [esquemaTableroPC, setEsquemaTableroPc] = useState(esquemaTableroPc);
   const [clickCelda, setClickCelda] = useState("");
   const [jugadorActivo, setJugadorActivo] = useState(true); // false yo, true pc
@@ -81,9 +81,6 @@ const Juego = () => {
     toggleSetContador();
     togglejugadorActivo(jugadorActivo);
   };
-
-  const [celdaJugador, setCeldaJugador] = useState([])
-  const [repetirCelda, setRepetirCelda] = useState([])
 
   const turnoPc = () => {
     let columnaAleatoria = Math.floor(Math.random() * 9);

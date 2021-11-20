@@ -3,13 +3,13 @@ import React, {useState} from 'react'
 
 const Celdas = (props) => {
     const valorCelda = (props.celdaValor)
-    const [fallo, setFallo] = useState(false)
+    const [missed, setMissed] = useState(false)
     const colorGolpe = props.colorGolpe
-    const toggleSetFallo = () => {
+    const toggleSetMissed = () => {
         if (valorCelda === 0){
-            setFallo(true)
+            setMissed(true)
         } else if (valorCelda !== 0){
-            setFallo(false)
+            setMissed(false)
         }
     }
 
@@ -25,9 +25,9 @@ const jugadorActivo = props.jugadorActivo
 
 
     return (
-        <div id="celda" className={Contador===0 ? "celda " : (fallo ? "celda fallo" : "celda "+ colorGolpe)} 
-        onClick={(e)=> props.toggleClickedCelda(props.index, valorCelda, toggleSetFallo, props.apellido,toggleSetContador, props.toggleJugadorActivo, jugadorActivo, props.colorGolpe)}>
-            {fallo === true ? "X" : ""}
+        <div id="celda" className={Contador===0 ? "celda " : (missed ? "celda missed" : "celda "+ colorGolpe)} 
+        onClick={(e)=> props.toggleClickCelda(props.index, valorCelda, toggleSetMissed, props.apellido,toggleSetContador, props.toggleJugadorActivo, jugadorActivo, props.colorGolpe)}>
+            {missed === true ? "X" : ""}
         </div>
     )
 }
