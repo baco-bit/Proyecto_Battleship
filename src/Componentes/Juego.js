@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Tablero from "./Tablero";
-import Celdas from "./Celdas";
 
 const Juego = () => {
 
@@ -57,9 +56,9 @@ const Juego = () => {
         nuevoEsquemaTableroParticipante[posicion[0]][posicion[2]] = 2;
         console.log(nuevoEsquemaTableroParticipante, "tablero de jugador");
         setEsquemaTableroParticipante(nuevoEsquemaTableroParticipante);
-      } else if (elGamer === "Pc") {
+      } else if (elGamer === "Jugador2") {
         nuevoEsquemaTableroPC[posicion[0]][posicion[2]] = 2;
-        console.log(nuevoEsquemaTableroPC, "tablero Pc");
+        console.log(nuevoEsquemaTableroPC, "tablero Jugador2");
         setEsquemaTableroPc(nuevoEsquemaTableroPC);
       }
     }
@@ -129,7 +128,7 @@ const Juego = () => {
 
     }
 
-    console.log(posicion, valorCelda, "posicion y valorCelda PC");
+    console.log(posicion, valorCelda, "posicion y valorCelda Jugador2");
     console.log(esquemaTableroParticipante);
     toggleSetContador();
 
