@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-image: url(https://i.ytimg.com/vi/Z0MVWtw0Dxk/maxresdefault.jpg);
+  display: flex;
+  object-fit:cover;
 }
 
 code {
@@ -70,13 +72,13 @@ h1{
 
 
 .Tablero .celda:hover{
-  background-color: rgb(24, 178, 184);
+  background-color: blue;
   cursor: pointer;
 }
 
 
 .tablero2 .celda:hover {
-  background-color: rgb(207, 97, 97);
+  background-color: rgb(212, 0, 0);
   cursor: pointer;
 }
 
@@ -105,16 +107,19 @@ h1{
 }
 
 .Tablero .golpeJugador {
-  background-color: rgb(56, 81, 161);
+  background-color: blue;
 }
 
 .tablero2 .golpePc {
   background-color: rgb(230, 14, 14);
 }
 
-.Tablero .missed, .tableroPc .missed {
+.Tablero .missed, .tablero2 .missed {
   background-color: rgb(226, 42, 243);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .disabled {
@@ -123,11 +128,5 @@ h1{
 }
 
 .turn {
-
-  background-color: brown;
-}
-
-.missed {
-  background-color: rgb(226, 42, 243);
-  color: white;
+  background-color: rgb(8, 98, 184);
 }
