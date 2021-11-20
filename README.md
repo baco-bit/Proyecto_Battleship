@@ -15,7 +15,7 @@ Juego para 2 personas.
 
 Los barcos se generan de forma aleatoria.
 
-Ojo que puedes clickear el mismo cuadro y te contara de igual manera el disparo, asi que piensa bien antes de apuntar.
+Ojo que puedes clickear el mismo cuadro donde disparaste anteriormente y te contara de igual manera el disparo, asi que piensa bien antes de apuntar.
 
 Gana el que derribe primero los barcos del otro.
 
