@@ -1,7 +1,7 @@
 # Battleship creado con React
 
 
-## Instrucciones
+## Instrucciones para iniciar:
 
 Para correr el juego, primero debes ejecutar:
 
@@ -9,14 +9,16 @@ Para correr el juego, primero debes ejecutar:
 - npm install
 - npm start
 
-## Como jugar
+## Como jugar:
 
-Este cuenta con 2 tableros, para Jugador y Pc.
+Juego para 2 personas.
 
-Los barcos se generan aleatoriamente.
+Los barcos se generan de forma aleatoria.
 
-El jugador debe seleccionar en la pantalla del tablero Pc, para hundir los barcos.
+Ojo que puedes clickear el mismo cuadro y te contara de igual manera el disparo, asi que piensa bien antes de apuntar.
 
-Al hacer click en uno, el Pc inmediatamente hara su jugada.
+Gana el que derribe primero los barcos del otro.
 
-Gana aquel que derribe primero los barcos del otro.
+## Nota:
+
+Aun esta en trabajo la muestra en pantalla del ganador.
