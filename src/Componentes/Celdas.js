@@ -26,7 +26,7 @@ const jugadorActivo = props.jugadorActivo
 
     return (
         <div id="celda" className={Contador===0 ? "celda " : (missed ? "celda missed" : "celda "+ colorGolpe)} 
-        onClick={(e)=> props.toggleClickCelda(props.index, valorCelda, toggleSetMissed, props.apellido,toggleSetContador, props.toggleJugadorActivo, jugadorActivo, props.colorGolpe)}>
+        onClick={(e)=> props.toggleClickCelda(props.index, valorCelda, toggleSetMissed, props.elGamer,toggleSetContador, props.toggleJugadorActivo, jugadorActivo, props.colorGolpe)}>
             {missed === true ? "X" : ""}
         </div>
     )

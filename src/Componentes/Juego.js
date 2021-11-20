@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Tablero from "./Tablero";
+import Celdas from "./Celdas";
 
 const Juego = () => {
 
@@ -34,29 +35,29 @@ const Juego = () => {
   const [clickCelda, setClickCelda] = useState("");
   const [jugadorActivo, setJugadorActivo] = useState(true); // false yo, true pc
 
-  const comprobarBarco = (valorCelda, toggleSetFallo, apellido, posicion) => {
+  const comprobarBarco = (valorCelda, toggleSetFallo, elGamer, posicion) => {
     let nuevoEsquemaTableroParticipante = [...esquemaTableroParticipante];
     let nuevoEsquemaTableroPC = [...esquemaTableroPC];
-    console.log(valorCelda, "Valor Celda", apellido, "Valor Disparo");
+    console.log(valorCelda, "Valor Celda", elGamer, "Valor Disparo");
     if (valorCelda === 0) {
-      if (apellido === "jugador") {
+      if (elGamer === "jugador") {
         nuevoEsquemaTableroParticipante[posicion[0]][posicion[2]] = 3;
         console.log(nuevoEsquemaTableroParticipante);
         setEsquemaTableroParticipante(nuevoEsquemaTableroParticipante);
-      } else if (apellido === "Pc") {
+      } else if (elGamer === "Jugador2") {
         nuevoEsquemaTableroPC[posicion[0]][posicion[2]] = 3;
         console.log(nuevoEsquemaTableroPC);
         setEsquemaTableroPc(nuevoEsquemaTableroPC);
       }
-      console.log("fallo en", apellido);
+      console.log("fallo en", elGamer);
       toggleSetFallo();
     } else if (valorCelda === 1) {
-      console.log(apellido, "le ha dado en", valorCelda);
-      if (apellido === "Jugador") {
+      console.log(elGamer, "le ha dado en el blanco", valorCelda);
+      if (elGamer === "Jugador") {
         nuevoEsquemaTableroParticipante[posicion[0]][posicion[2]] = 2;
         console.log(nuevoEsquemaTableroParticipante, "tablero de jugador");
         setEsquemaTableroParticipante(nuevoEsquemaTableroParticipante);
-      } else if (apellido === "Pc") {
+      } else if (elGamer === "Pc") {
         nuevoEsquemaTableroPC[posicion[0]][posicion[2]] = 2;
         console.log(nuevoEsquemaTableroPC, "tablero Pc");
         setEsquemaTableroPc(nuevoEsquemaTableroPC);
@@ -68,14 +69,14 @@ const Juego = () => {
     posicion,
     valorCelda,
     toggleSetFallo,
-    apellido,
+    elGamer,
     toggleSetContador,
     toggleJugadorActivo,
     jugadorActivo
   ) => {
     setClickCelda(posicion);
     console.log(posicion, valorCelda);
-    comprobarBarco(valorCelda, toggleSetFallo, apellido, posicion);
+    comprobarBarco(valorCelda, toggleSetFallo, elGamer, posicion);
     toggleSetContador();
     toggleJugadorActivo(jugadorActivo);
   };
@@ -143,22 +144,18 @@ const Juego = () => {
   useEffect(() => {
     turnoPc();
     toggleJugadorActivo(jugadorActivo);
-    romper()
   }, [esquemaTableroPC]);
 
   const toggleJugadorActivo = (jugadorActivo) => {
     setJugadorActivo(!jugadorActivo);
     console.log(jugadorActivo, "Jugador Activo");
   };
-  function romper() {
-    console.log("==============================");
-  }
+
   return (
     <div>
         
       <div className="container">
 
-        
         <div className="instrucciones">
           <div className="tituloInstrucciones">
             <h4>Como jugar:</h4>
@@ -172,13 +169,15 @@ const Juego = () => {
                 Los barcos se generan de forma aleatoria.
               </li>
               <li>
-                Ojo que puedes clickear el mismo cuadro y te contara de igual manera el disparo, asi que piensa bien antes de apuntar
+                Si haces click en un lugar que ya hayas disparado, este se contara como jugada, asi que piensa antes de apuntar.
               </li>
               <li>
                 Gana el que derribe primero los barcos del otro.
               </li>
             </ol>
+
           </div>
+            
 
         </div>
         <div className="tableroTotal">

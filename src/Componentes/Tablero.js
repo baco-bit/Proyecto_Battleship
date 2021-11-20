@@ -6,49 +6,52 @@ const Tablero = (props) => {
 
     const Tablero = props.esquemaTableroParticipante.map((array, indexFila) => {
         return array.map((celda, indexCelda) => {
-            return <Celdas 
-            key={indexFila.toString() + indexCelda.toString()} 
-            index={indexFila.toString() +indexCelda.toString()} 
-            celdaValor={celda} 
-            toggleClickCelda={props.toggleClickCelda} 
-            apellido="player" colorGolpe={"golpeJugador"} 
+            return <Celdas
+                key={indexFila.toString() + indexCelda.toString()}
+                index={indexFila.toString() + indexCelda.toString()}
+                celdaValor={celda}
+                toggleClickCelda={props.toggleClickCelda}
+                elGamer="jugador1" colorGolpe={"golpeJugador"}
 
-            toggleJugadorActivo={props.toggleJugadorActivo}
-            jugadorActivo={props.jugadorActivo}/>
+                toggleJugadorActivo={props.toggleJugadorActivo}
+                jugadorActivo={props.jugadorActivo} />
         })
     })
 
     const tablero2 = props.esquemaTableroPC.map((array, indexFila) => {
         return array.map((celda, indexCelda) => {
-            return <Celdas key={indexFila.toString() + indexCelda.toString()} 
-            index={(indexFila.toString()) + (indexCelda.toString())} 
-            celdaValor={celda} 
-            toggleClickCelda={props.toggleClickCelda} 
-            apellido="computer" colorGolpe={"golpePc"} 
-            toggleJugadorActivo={props.toggleJugadorActivo}
-            jugadorActivo={props.jugadorActivo}/>
+            return <Celdas key={indexFila.toString() + indexCelda.toString()}
+                index={(indexFila.toString()) + (indexCelda.toString())}
+                celdaValor={celda}
+                toggleClickCelda={props.toggleClickCelda}
+                elGamer="jugador2" colorGolpe={"golpeJugador2"}
+                toggleJugadorActivo={props.toggleJugadorActivo}
+                jugadorActivo={props.jugadorActivo} />
         })
     })
 
     return (
         <>
-        <div className="tableroJuego">
         
-            <div className={props.jugadorActivo === true ? "Tablero" : "Tablero disabled"}>
-                <div className={props.jugadorActivo === true ? "titulo turn" : "titulo"}>
-                    <h3>Tablero Jugador 1</h3>
-                </div>
+            <div className="tableroJuego">
             
-            {Tablero}
-            </div>
-            <div className={props.jugadorActivo === false ? "tablero2" : "tablero2 disabled"}>
-                <div className={props.jugadorActivo === false ? "titulo turn" : "titulo"}>
-                    <h3>Tablero Jugador 2</h3>
+                <div className={props.jugadorActivo === true ? "Tablero" : "Tablero disabled"}>
+                    <div className={props.jugadorActivo === true ? "titulo turn" : "titulo"}>
+                        <h3> Jugador 1 </h3>
+                    </div>
+                    <div className="diezxdiez">
+                        {Tablero}
+                    </div>
                 </div>
-            {tablero2}
+                <div className={props.jugadorActivo === false ? "tablero2" : "tablero2 disabled"}>
+                    <div className={props.jugadorActivo === false ? "titulo turn" : "titulo"}>
+                        <h3> Jugador 2 </h3>
+                    </div>
+                    <div className="diezxdiez">
+                        {tablero2}
+                    </div>
+                </div>
             </div>
-
-        </div>
 
         </>
     )

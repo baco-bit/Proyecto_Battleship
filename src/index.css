@@ -6,70 +6,75 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url(https://i.ytimg.com/vi/Z0MVWtw0Dxk/maxresdefault.jpg);
+  background-image: url(https://i.postimg.cc/GpY2v8Vc/fondo.png);
+  background-size: cover;
+}
+
+.container{
   display: flex;
-  object-fit:cover;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 h1{
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   font-size: 40px;
-  margin: 0;
-  height: 100px;
+  margin: auto;
+  height: 60px;
+  width: 100%;
   color: white;
   text-shadow: 2px 2px 4px rgb(227, 243, 4);
   background-color: black;
 }
 
-.titulo {
+.titulo{
   display: flex;
-  width: 100%;
   justify-content: center;
-  align-content: flex-start;
-  margin: 0 3px;
-  
-}
-
-.celda{
-  margin: 1px;
-  display: flex;
-  width: 30px;
+  align-items: center;
+  width: 100%;
   height: 30px;
-  background-color: rgb(68, 68, 247);
+  background-color: rgb(5, 78, 146);
+  text-shadow: 2px 2px 4px rgb(21, 237, 245);
   border: 2px solid black;
-}
-.tableroTotal{
-  display: flex;
-  justify-content: flex-start;
+  border-radius: 10px;
 }
 
-.tableroJuego {
-  display:flex;
-
+.turn {
+  background-color: rgb(21, 237, 245);
+  text-shadow: 2px 2px 4px rgb(5, 78, 146);
+  border: 2px solid black;
+  border-radius: 10px;
 }
+
+.disabled {
+  pointer-events: none;
+  cursor: pointer;
+}
+
+/* Tableros */
 
 .Tablero, .tablero2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  margin: 5%;
-  background-image: url(https://image.freepik.com/vector-gratis/conjunto-barcos-pasajeros-barcos-estilo-artistico-8-bits_97889-261.jpg);
-  object-fit: cover;
+  margin: 5px;
   padding: 5px;
-  box-shadow: 5px 5px 5px rgb(197, 211, 0);
-  width: 550px;
-  height: 400px;
 }
 
+
+.tableroTotal{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+.tableroJuego {
+  display:flex;
+
+}
 
 .Tablero .celda:hover{
   background-color: blue;
@@ -82,35 +87,11 @@ h1{
   cursor: pointer;
 }
 
-.container{
-  display: flex;
-  justify-content: space-between;
-}
-
-.instrucciones{
-  background-color: rgb(197, 211, 0);
-  margin-left: 30px;
-  margin-top: 70px;
-  height: 370px;
-  border: 3px solid black;
-}
-
-.tituloInstrucciones {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.cuerpoInstrucciones{
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 .Tablero .golpeJugador {
   background-color: blue;
 }
 
-.tablero2 .golpePc {
+.tablero2 .golpeJugador2 {
   background-color: rgb(230, 14, 14);
 }
 
@@ -122,11 +103,63 @@ h1{
   align-items: center;
 }
 
-.disabled {
-  pointer-events: none;
-  cursor: pointer;
+/* Celdas */
+
+.celda{
+  margin: 1px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(68, 68, 247);
+  border: 2px solid black;
+}
+.diezxdiez{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 360px;
+  height: 360px;
 }
 
-.turn {
-  background-color: rgb(8, 98, 184);
+/* Instrucciones */
+
+.instrucciones{
+  background-color: rgb(197, 211, 0);
+  margin-top: 50px;
+  height: 360px;
+  width: 300px;
+  border: 3px solid black;
 }
+
+.tituloInstrucciones {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 40px;
+  width: 200px;
+}
+.cuerpoInstrucciones{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.colorTurno{
+  display: flex;
+  background-color: rgb(21, 237, 245);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.turnoActivo{
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
