@@ -5,6 +5,7 @@
 
 Para correr el juego, primero debes ejecutar:
 
+- cd battleship
 - npm install
 - npm start
 
