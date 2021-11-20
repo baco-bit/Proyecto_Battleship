@@ -18,7 +18,7 @@ const Tablero = (props) => {
         })
     })
 
-    const tableroPC = props.esquemaTableroPC.map((array, indexFila) => {
+    const tablero2 = props.esquemaTableroPC.map((array, indexFila) => {
         return array.map((celda, indexCelda) => {
             return <Celdas key={indexFila.toString() + indexCelda.toString()} 
             index={(indexFila.toString()) + (indexCelda.toString())} 
@@ -33,18 +33,19 @@ const Tablero = (props) => {
     return (
         <>
         <div className="tableroJuego">
+        
             <div className={props.jugadorActivo === true ? "Tablero" : "Tablero disabled"}>
-                <div className={props.jugadorActivo === true ? "title turn" : "title"}>
-                    <h3>Tablero Jugador</h3>
+                <div className={props.jugadorActivo === true ? "titulo turn" : "titulo"}>
+                    <h3>Tablero Jugador 1</h3>
                 </div>
             
             {Tablero}
             </div>
-            <div className={props.jugadorActivo === false ? "tableroPC" : "tableroPC disabled"}>
+            <div className={props.jugadorActivo === false ? "tablero2" : "tablero2 disabled"}>
                 <div className={props.jugadorActivo === false ? "titulo turn" : "titulo"}>
-                    <h3>Tablero PC</h3>
+                    <h3>Tablero Jugador 2</h3>
                 </div>
-            {tableroPC}
+            {tablero2}
             </div>
 
         </div>
